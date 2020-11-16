@@ -12,7 +12,6 @@ app.get("/", urlencodedParser, function (request, response) {
 app.post("/", urlencodedParser, function (request, response) {
     if (!request.body) return response.sendStatus(400);
     if ('user_name' in request.body){
-        response.sendFile(__dirname + "/request.html");
         let name = request.body['user_name'];
         let ans = chck.CheckUser(name);
         console.log(name,ans);
